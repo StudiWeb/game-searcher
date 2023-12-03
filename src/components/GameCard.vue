@@ -2,14 +2,14 @@
     <div
             @mouseenter="openGameCard(id)"
             @mouseleave="closeGameCard"
-            class="w-18rem"
+            class="w-20rem"
             :style="[id === hoveredGameCardId ? {'height' : `${hoveredGameCardImageHeight}px`} : {'height' : 'auto'}]"
             :class="{'relative': isFullGameCard}"
     >
         <div>
             <Card
-                :class="{'absolute top-0 left-0 z-5 scale': isFullGameCard}"
-                :pt="{
+                    :class="{'absolute top-0 left-0 z-5 scale': isFullGameCard}"
+                    :pt="{
                     root: {class : 'p-0'},
                     body: {class : 'p-0'},
                     content: {class : 'p-0'},
@@ -17,20 +17,64 @@
             >
                 <template #content>
                     <div :ref="`game-card-${id}`">
-                        <div>
-                            <img :src="backgroundImageUrl" :alt="name" class="w-full">
-                            <div class="text-xl font-bold p-4">{{ name }}</div>
-                        </div>
+                        <Galleria
+                                :value="galleria"
+                                :numVisible="5"
+                                :showThumbnails="false"
+                                :showIndicators="true"
+                                :changeItemOnIndicatorHover="true"
+                                :showIndicatorsOnItem="true"
+                                indicatorsPosition="bottom"
+                                :pt="{
+                                indicator: {class: 'flex h-full w-2rem mx-1'},
+                                indicators: (options) => ({
+                                    class: [
+                                        'h-full',
+                                        {
+                                            'flex' : isFullGameCard
+                                        }
+                                    ]
+                                }),
+
+                            }"
+                        >
+                            <template #item="slotProps">
+                                <div class="relative">
+                                    <div class="absolute top-0 z-2 p-4 text-xl font-bold text-white">{{ name }}</div>
+                                    <img :src="slotProps.item.image" style="width: 100%; display: block"/>
+                                </div>
+                            </template>
+                            <template #indicator="{ index }">
+                                <div
+                                        class="galleria-game-indicator hidden"
+                                        :class="{'block': isFullGameCard}"
+                                >
+                                    <span></span>
+                                </div>
+                            </template>
+                        </Galleria>
                         <div v-if="isFullGameCard" class="flex flex-column gap-4 p-4">
+                            <div class="flex justify-content-between">
+                                <div class="font-medium">Rating:</div>
+                                <Rating
+                                        :model-value="rating"
+                                        readonly
+                                        :cancel="false"
+                                        :pt="{
+                                        onIcon: { class: 'text-yellow-500' }
+                                    }"
+                                />
+                            </div>
                             <div class="flex justify-content-between">
                                 <div class="font-medium">Release date:</div>
                                 <Button :label="releaseDate" link size="small" class="p-0"/>
                             </div>
                             <div class="flex justify-content-between">
                                 <div class="font-medium">Genres</div>
-                                <div class="flex flex-wrap gap-2">
-                                    <Button v-for="genre in genres" :key="genre.id"
-                                            :label="genre.name" link size="small" class="p-0"/>
+                                <div class="flex gap-2">
+                                    <span v-for="(genre,index) in genres" :key="genre.id">
+                                        <Button v-if="index < 2" :label="genre.name" link size="small" class="p-0"/>
+                                    </span>
                                 </div>
                             </div>
                             <Button outlined rounded class="w-full" size="small">
@@ -55,7 +99,9 @@ export default {
         name: String,
         releaseDate: String,
         backgroundImageUrl: String,
-        genres: Array
+        genres: Array,
+        galleria: Array,
+        rating: Number
     },
 
     data() {
@@ -81,6 +127,18 @@ export default {
 </script>
 
 <style scoped>
+
+:deep(.p-galleria.p-galleria-indicator-onitem .p-galleria-indicators) {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.galleria-game-indicator {
+    background: #fff;
+    height: .25rem;
+    width: 2rem;
+    align-self: end;
+}
+
 .scale {
     transition: all .5s;
     transform: scale(1.05);

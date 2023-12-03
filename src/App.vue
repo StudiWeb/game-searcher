@@ -10,6 +10,8 @@
                     :release-date="item.released"
                     :background-image-url="item.background_image"
                     :genres="item.genres"
+                    :galleria="item.short_screenshots"
+                    :rating="item.rating"
                 />
             </div>
             <div class="flex flex-column gap-4">
@@ -21,6 +23,8 @@
                     :release-date="item.released"
                     :background-image-url="item.background_image"
                     :genres="item.genres"
+                    :galleria="item.short_screenshots"
+                    :rating="item.rating"
                 />
             </div>
             <div class="flex flex-column gap-4">
@@ -32,6 +36,8 @@
                     :release-date="item.released"
                     :background-image-url="item.background_image"
                     :genres="item.genres"
+                    :galleria="item.short_screenshots"
+                    :rating="item.rating"
                 />
             </div>
             <div class="flex flex-column gap-4">
@@ -43,6 +49,8 @@
                     :release-date="item.released"
                     :background-image-url="item.background_image"
                     :genres="item.genres"
+                    :galleria="item.short_screenshots"
+                    :rating="item.rating"
                 />
             </div>
         </div>
