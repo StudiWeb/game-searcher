@@ -10,7 +10,10 @@ import Card from 'primevue/card'
 import Tag from 'primevue/tag'
 import Rating from 'primevue/rating'
 import Galleria from 'primevue/galleria'
-import InputText from 'primevue/inputtext';
+import InputText from 'primevue/inputtext'
+import AutoComplete from 'primevue/autocomplete';
+import Dialog from 'primevue/dialog';
+
 
 import App from './App.vue'
 import router from './router'
@@ -27,5 +30,7 @@ app.component('Tag', Tag)
 app.component('Rating', Rating)
 app.component('Galleria', Galleria)
 app.component('InputText', InputText)
+app.component('AutoComplete', AutoComplete)
+app.component('Dialog', Dialog)
 
 app.mount('#app')

@@ -62,7 +62,7 @@
 <script>
 import { mapState, mapActions } from 'pinia'
 import { useGameListStore } from '@/stores/gameList'
-import AppBanner from "@/components/AppBanner.vue";
+import AppBanner from '@/components/AppBanner.vue'
 import GameCard from '@/components/GameCard.vue'
 
 export default {
@@ -99,19 +99,14 @@ export default {
 
 <style>
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .banner {
-    min-height: 40vh;
-    background-image: url("/banner.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-
-.scale {
-  transition: all 0.25s;
-  transform: scale(1.05);
+  min-height: 40vh;
+  background-image: url('/banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 </style>
