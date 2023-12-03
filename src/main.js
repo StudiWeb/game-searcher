@@ -10,6 +10,7 @@ import Card from 'primevue/card'
 import Tag from 'primevue/tag'
 import Rating from 'primevue/rating'
 import Galleria from 'primevue/galleria'
+import InputText from 'primevue/inputtext';
 
 import App from './App.vue'
 import router from './router'
@@ -25,5 +26,6 @@ app.component('Button', Button)
 app.component('Tag', Tag)
 app.component('Rating', Rating)
 app.component('Galleria', Galleria)
+app.component('InputText', InputText)
 
 app.mount('#app')
