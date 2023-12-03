@@ -2,7 +2,7 @@
     <div
             @mouseenter="openGameCard(id)"
             @mouseleave="closeGameCard"
-            class="w-22rem"
+            class="w-18rem"
             :style="[id === hoveredGameCardId ? {'height' : `${hoveredGameCardImageHeight}px`} : {'height' : 'auto'}]"
             :class="{'relative': isFullGameCard}"
     >

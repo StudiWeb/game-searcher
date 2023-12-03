@@ -10,8 +10,8 @@ import Button from 'primevue/button';
 import Card from 'primevue/card';
 import Tag from 'primevue/tag';
 import Rating from 'primevue/rating';
-import DataView from 'primevue/dataview';
-import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
+import Galleria from 'primevue/galleria';
+
 
 
 import App from './App.vue'
@@ -27,7 +27,6 @@ app.component('Card',Card)
 app.component('Button',Button)
 app.component('Tag',Tag)
 app.component('Rating',Rating)
-app.component('DataView',DataView)
-app.component('DataViewLayoutOptions',DataViewLayoutOptions)
+app.component('Galleria',Galleria)
 
 app.mount('#app')

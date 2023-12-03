@@ -48,7 +48,7 @@ export const useGameListStore = defineStore('gameList', {
 
   actions: {
 
-    async initGameList() {
+    async loadGames() {
       const response = await fetch(`https://api.rawg.io/api/games?key=bc86ef00b13b45ceb5a97af5c32e13f2&&page=${this.currentPage}&&per_page=${this.perPage}`)
       const games = await response.json()
       games.results.forEach(game => this.gameList.push(game))
@@ -56,7 +56,7 @@ export const useGameListStore = defineStore('gameList', {
 
     nextPage() {
       this.currentPage++
-      this.initGameList()
+      this.loadGames()
     }
 
   },

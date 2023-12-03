@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="flex flex-wrap gap-4">
+    <div class="flex flex-column gap-4">
+        <div class="flex flex-wrap gap-4 mx-auto">
             <div class="flex flex-column gap-4">
                 <GameCard
                     v-for="(item, index) in firstColumnData"
@@ -45,8 +45,8 @@
                     :genres="item.genres"
                 />
             </div>
-            <Button @click="nextPage" label="Load more" class="align-self-center m-5"/>
         </div>
+        <Button @click="nextPage" label="Load more" class="align-self-center m-5"/>
     </div>
 </template>
 
@@ -77,11 +77,11 @@ export default {
     },
 
     async mounted() {
-        await this.initGameList()
+        await this.loadGames()
     },
 
     methods: {
-        ...mapActions(useGameListStore, ['initGameList']),
+        ...mapActions(useGameListStore, ['loadGames']),
         ...mapActions(useGameListStore, ['nextPage']),
     }
 }
