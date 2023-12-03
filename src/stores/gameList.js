@@ -22,24 +22,24 @@ export const useGameListStore = defineStore('gameList', {
     },
 
     secondColumnData: (state) => {
-      let startIndex = (state.perPage * state.currentPage ) - state.perPage + 5
-      let endIndex = (state.perPage * state.currentPage ) - state.perPage + (state.perPage / state.numberOfColumns) + 5
+      let startIndex = (state.perPage * state.currentPage ) - state.perPage + Math.floor(state.perPage / state.numberOfColumns)
+      let endIndex = (state.perPage * state.currentPage ) - state.perPage + Math.floor(state.perPage / state.numberOfColumns) * 2
       let data = state.gameList.slice(startIndex,endIndex)
       data.forEach(data => state.secondColumn.push(data))
       return state.secondColumn
     },
 
     thirdColumnData: (state) => {
-      let startIndex = (state.perPage * state.currentPage ) - state.perPage + 10
-      let endIndex = (state.perPage * state.currentPage ) - state.perPage + (state.perPage / state.numberOfColumns) + 10
+      let startIndex = (state.perPage * state.currentPage ) - state.perPage + Math.floor(state.perPage / state.numberOfColumns) * 2
+      let endIndex = (state.perPage * state.currentPage ) - state.perPage + Math.floor(state.perPage / state.numberOfColumns) * 3
       let data = state.gameList.slice(startIndex,endIndex)
       data.forEach(data => state.thirdColumn.push(data))
       return state.thirdColumn
     },
 
     fourthColumnData: (state) => {
-      let startIndex = (state.perPage * state.currentPage ) - state.perPage + 15
-      let endIndex = (state.perPage * state.currentPage ) - state.perPage + (state.perPage / state.numberOfColumns) + 15
+      let startIndex = (state.perPage * state.currentPage ) - state.perPage + Math.floor(state.perPage / state.numberOfColumns) * 3
+      let endIndex = (state.perPage * state.currentPage ) - state.perPage + Math.floor(state.perPage / state.numberOfColumns) * 4
       let data = state.gameList.slice(startIndex,endIndex)
       data.forEach(data => state.fourthColumn.push(data))
       return state.fourthColumn
