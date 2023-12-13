@@ -11,9 +11,11 @@ import Tag from 'primevue/tag'
 import Rating from 'primevue/rating'
 import Galleria from 'primevue/galleria'
 import InputText from 'primevue/inputtext'
-import AutoComplete from 'primevue/autocomplete';
-import Dialog from 'primevue/dialog';
-
+import AutoComplete from 'primevue/autocomplete'
+import Dialog from 'primevue/dialog'
+import DataView from 'primevue/dataview'
+import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
+import ScrollPanel from 'primevue/scrollpanel'
 
 import App from './App.vue'
 import router from './router'
@@ -32,5 +34,7 @@ app.component('Galleria', Galleria)
 app.component('InputText', InputText)
 app.component('AutoComplete', AutoComplete)
 app.component('Dialog', Dialog)
+app.component('DataView', DataView)
+app.component('ScrollPanel', ScrollPanel)
 
 app.mount('#app')

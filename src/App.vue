@@ -50,7 +50,9 @@
           :release-date="item.released"
           :background-image-url="item.background_image"
           :genres="item.genres"
-          :galleria="item.short_screenshots ? item.short_screenshots : [ {image: item.background_image}]"
+          :galleria="
+            item.short_screenshots ? item.short_screenshots : [{ image: item.background_image }]
+          "
           :rating="item.rating"
         />
       </div>

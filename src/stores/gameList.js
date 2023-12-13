@@ -1,4 +1,4 @@
-import {defineStore} from 'pinia'
+import { defineStore } from 'pinia'
 
 export const useGameListStore = defineStore('gameList', {
   state: () => ({
@@ -77,7 +77,7 @@ export const useGameListStore = defineStore('gameList', {
 
     async searchGamesByTitle(title) {
       const response = await fetch(
-          `https://api.rawg.io/api/games?key=bc86ef00b13b45ceb5a97af5c32e13f2&&search=${title}`
+        `https://api.rawg.io/api/games?key=bc86ef00b13b45ceb5a97af5c32e13f2&&search=${title}&&page_size=10`
       )
       const result = await response.json()
       this.searchedGamesByTitle = result.results
