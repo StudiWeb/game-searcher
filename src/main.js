@@ -17,6 +17,8 @@ import DataView from 'primevue/dataview'
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
 import ScrollPanel from 'primevue/scrollpanel'
 import Menu from 'primevue/menu';
+import Dropdown from 'primevue/dropdown';
+
 
 import App from './App.vue'
 import router from './router'
@@ -39,5 +41,6 @@ app.component('DataView', DataView)
 app.component('DataViewLayoutOptions', DataViewLayoutOptions)
 app.component('ScrollPanel', ScrollPanel)
 app.component('Menu', Menu)
+app.component('Dropdown', Dropdown)
 
 app.mount('#app')

@@ -19,7 +19,7 @@
 <script>
 import {mapActions, mapState} from "pinia";
 import GameCard from "@/components/GameCard.vue";
-import {useGameGenresStore} from "@/stores/gameGenres";
+import {useGameGenresStore} from "@/stores/genres";
 import { useGamesByGenreStore } from "@/stores/gamesByGenres";
 
 export default {

@@ -1,36 +1,25 @@
 <template>
-<!--  <AppBanner />-->
-  <GameList />
+    <div class="flex">
+        <AppMenu />
+        <RouterView />
+    </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'pinia'
-import { useGameGenresStore } from "@/stores/gameGenres";
-import AppBanner from '@/components/AppBanner.vue'
-import GameList from "@/components/GamesByGenreList.vue";
+import AppMenu from "@/components/AppMenu.vue";
 
 export default {
-  components: {
-    AppBanner,
-    GameList
-  },
-
-  computed: {
-      ...mapState(useGameGenresStore, ['gameGenres'])
-  },
-
-  async mounted() {
-    await this.loadGameGenres()
-  },
-
-  methods: {
-    ...mapActions(useGameGenresStore, ['loadGameGenres'])
-  }
+    components: {
+        AppMenu
+    }
 }
 </script>
 
 <style>
+
 body {
   margin: 0;
+  color: #fff;
+  background-color: #0D000B;
 }
 </style>
