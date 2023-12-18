@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useGameListStore = defineStore('gameList', {
+export const useAllGamesStore = defineStore('allGames', {
   state: () => ({
     gameList: [],
     currentPage: 1,

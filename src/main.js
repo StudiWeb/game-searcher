@@ -16,6 +16,7 @@ import Dialog from 'primevue/dialog'
 import DataView from 'primevue/dataview'
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
 import ScrollPanel from 'primevue/scrollpanel'
+import Menu from 'primevue/menu';
 
 import App from './App.vue'
 import router from './router'
@@ -35,6 +36,8 @@ app.component('InputText', InputText)
 app.component('AutoComplete', AutoComplete)
 app.component('Dialog', Dialog)
 app.component('DataView', DataView)
+app.component('DataViewLayoutOptions', DataViewLayoutOptions)
 app.component('ScrollPanel', ScrollPanel)
+app.component('Menu', Menu)
 
 app.mount('#app')

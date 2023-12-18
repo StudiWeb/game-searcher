@@ -1,17 +1,12 @@
 <template>
-  <div class="banner p-6">
-    <div class="text-center">
-      <div class="text-6xl text-primary font-bold mb-4">Game searcher</div>
-      <SearchGames />
-    </div>
-  </div>
+  <div class="h-screen app-banner"></div>
 </template>
 
-<script>
-import SearchGames from '@/components/SearchGames.vue'
-export default {
-  components: {
-    SearchGames
-  }
+<style scoped>
+.app-banner {
+    background-image: url('/banner_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
-</script>
+</style>
